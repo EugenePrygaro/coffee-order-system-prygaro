@@ -8,4 +8,4 @@ if (isValidType(type)) {
 } else {
   console.log("Error: We don't have this coffee.");
 }
-console.log("MAIN finish");
+console.log("Order finish");
