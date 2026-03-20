@@ -1,3 +1,8 @@
 const { getPrice } = require("./coffeeService");
-const type = "latte";
-console.log(`Price for ${type} is ${getPrice(type)} UAH`);
+const { isValidType } = require("./validator");
+const type = "Mocha";
+if (isValidType(type)) {
+  console.log(`Price: ${getPrice(type)}`);
+} else {
+  console.log("Error: We don't have this coffee.");
+}
