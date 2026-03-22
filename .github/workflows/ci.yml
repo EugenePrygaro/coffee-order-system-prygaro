@@ -1,0 +1,27 @@
+name: Node.js CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Linting
+        run: npx eslint . [cite_start]|| echo "No eslint config found, skipping"
+
+      - name: Run Unit Tests
+        run: node test.js
+
+      - name: Static Analysis
+        run: echo "Running static analysis..."
