@@ -1,4 +1,4 @@
-const prices = { espresso: 99, latte: 50, cappuccino: 45 };
+const prices = { espresso: 30, latte: 50, cappuccino: 45 };
 const getPrice = (type) => {
   const price = prices[type.toLowerCase()];
   return price ? `${price} UAH` : "Not available";
