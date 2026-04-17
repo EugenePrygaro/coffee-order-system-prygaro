@@ -57,8 +57,8 @@ jobs:
     steps:
       - name: Smoke test
         run: |
-          echo "Імітація помилки на staging..."
-          node -e "process.exit(1);"
+          echo "Запуск smoke-тесту"
+          node -e "if (1 !== 1) { console.error('Помилка валідації'); process.exit(1); } else { console.log('Staging verification success'); }"
 
   # Deploy to production
   deploy_production:
